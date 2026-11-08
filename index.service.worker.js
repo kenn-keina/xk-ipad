@@ -4,7 +4,7 @@
 // Incrementing CACHE_VERSION will kick off the install event and force
 // previously cached resources to be updated from the network.
 /** @type {string} */
-const CACHE_VERSION = '1794106150|119065541';
+const CACHE_VERSION = 'xk-ipad-v2-1794148553|94345684';
 /** @type {string} */
 const CACHE_PREFIX = 'XoraKids-sw-cache-';
 const CACHE_NAME = CACHE_PREFIX + CACHE_VERSION;
@@ -21,6 +21,9 @@ const CACHEABLE_FILES = ["index.wasm","index.pck"];
 const FULL_CACHE = CACHED_FILES.concat(CACHEABLE_FILES);
 
 self.addEventListener('install', (event) => {
+	// xk-ipad v2: take over at once, so an iPad that added the old version to the Home
+	// Screen drops the old cache on activate and loads the new files on its next start.
+	self.skipWaiting();
 	event.waitUntil(caches.open(CACHE_NAME).then((cache) => cache.addAll(CACHED_FILES)));
 });
 
