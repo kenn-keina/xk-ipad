@@ -4,7 +4,7 @@
 // Incrementing CACHE_VERSION will kick off the install event and force
 // previously cached resources to be updated from the network.
 /** @type {string} */
-const CACHE_VERSION = 'xk-ipad-v2-1794148553|94345684';
+const CACHE_VERSION = 'xk-ipad-v2-1794151108|102781963';
 /** @type {string} */
 const CACHE_PREFIX = 'XoraKids-sw-cache-';
 const CACHE_NAME = CACHE_PREFIX + CACHE_VERSION;
